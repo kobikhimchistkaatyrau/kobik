@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Köbik | Химчистка одежды в Атырау с доставкой</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #7CC6E8;       /* Точный цвет с логотипа Köbik */
+            --brand-dark: #4CA8D3;       /* Насыщенный голубой для кнопок и ховеров */
+            --brand-light: #F2F9FC;      /* Очень светлый голубовато-белый фон */
+            --white: #FFFFFF;
+            --text-main: #1A2E3B;        /* Глубокий темно-синий */
+            --text-muted: #5C7280;
+            --border-color: #DDF0F8;
+            --shadow: 0 12px 32px rgba(76, 168, 211, 0.14);
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--brand-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--brand-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 26px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.25s;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-dark);
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-header {
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            border: 1.5px solid var(--brand-blue);
+            padding: 10px 22px;
+        }
+
+        .btn-header:hover {
+            background: var(--brand-blue);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--brand-blue);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(124, 198, 232, 0.45);
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--brand-dark);
+            border: 2px solid var(--brand-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--brand-light);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--brand-dark);
+            margin-top: 15px;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        /* Главный экран */
+        .hero {
+            padding: 70px 0 90px;
+            background: linear-gradient(180deg, var(--brand-light) 0%, var(--white) 100%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--brand-dark);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 46px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 35px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 24px;
+            color: var(--brand-dark);
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Круглый логотип-визуал справа */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand-circle {
+            position: relative;
+            width: 360px;
+            height: 360px;
+            background: var(--brand-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 60px rgba(124, 198, 232, 0.55);
+            border: 8px solid var(--white);
+        }
+
+        .brand-logo-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--white);
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .washer-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .washer-window {
+            width: 34px;
+            height: 38px;
+            border: 3px solid var(--brand-blue);
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .washer-window::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid var(--brand-blue);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: var(--shadow);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .card-1 { top: 15px; left: -25px; }
+        .card-2 { bottom: 35px; left: -35px; animation-delay: 1.2s; }
+        .card-3 { top: 65px; right: -30px; animation-delay: 2.4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Секции */
+        .section {
+            padding: 85px 0;
+        }
+
+        .bg-light {
+            background-color: var(--brand-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 55px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 17px;
+        }
+
+        /* Карточки услуг (2 крупные карточки) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 35px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-blue);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--brand-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Полный Прайс-лист */
+        .price-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .tab-btn {
+            padding: 12px 26px;
+            border-radius: 50px;
+            border: 1.5px solid var(--brand-blue);
+            background: var(--white);
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.25s;
+            font-family: inherit;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--brand-blue);
+            color: var(--white);
+            box-shadow: 0 6px 16px rgba(124, 198, 232, 0.4);
+        }
+
+        .price-container {
+            max-width: 920px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 35px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .price-category {
+            display: none;
+        }
+
+        .price-category.active {
+            display: block;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px dashed var(--border-color);
+            gap: 15px;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-name strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .price-name span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .price-value {
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--brand-dark);
+            white-space: nowrap;
+            background: var(--brand-light);
+            padding: 6px 14px;
+            border-radius: 50px;
+        }
+
+        /* Калькулятор заказа */
+        .calc-box {
+            display: grid;
+            grid-template-columns: 1.4fr 0.9fr;
+            gap: 30px;
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .calc-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+        }
+
+        .calc-info strong {
+            display: block;
+            font-size: 17px;
+        }
+
+        .calc-info span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .calc-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qty-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid var(--brand-blue);
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .qty-btn:hover {
+            background: var(--brand-blue);
+            color: var(--white);
+        }
+
+        .calc-summary {
+            background: var(--brand-light);
+            padding: 30px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .calc-summary h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        #selected-list {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            min-height: 60px;
+            font-size: 14px;
+        }
+
+        .total-price-box {
+            background: var(--white);
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-price-box strong {
+            font-size: 20px;
+            color: var(--brand-dark);
+        }
+
+        .delivery-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Шаги доставки */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .step-card {
+            background: var(--white);
+            padding: 32px 26px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .step-num {
+            display: inline-block;
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--brand-blue);
+            margin-bottom: 12px;
+        }
+
+        /* Отзывы */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .stars {
+            color: #FFB800;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 18px;
+        }
+
+        .author {
+            font-weight: 700;
+            color: var(--brand-dark);
+            font-size: 14px;
+        }
+
+        /* Филиалы и Контакты */
+        .contacts-card {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 40px;
+            background: var(--brand-light);
+            padding: 45px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .branches-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 22px 0;
+        }
+
+        .branch-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1.5px solid var(--border-color);
+        }
+
+        .branch-box.soon {
+            border-color: var(--brand-blue);
+            background: linear-gradient(180deg, #FFFFFF 0%, #F2F9FC 100%);
+        }
+
+        .branch-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 50px;
+            margin-bottom: 8px;
+        }
+
+        .badge-open {
+            background: #E3F7EC;
+            color: #1B8A52;
+        }
+
+        .badge-soon {
+            background: var(--brand-blue);
+            color: var(--white);
+        }
+
+        .branch-box h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .branch-box p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 15px 0 28px;
+        }
+
+        .contact-list li {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .contact-list a {
+            color: var(--brand-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .map-placeholder {
+            height: 100%;
+            min-height: 300px;
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-dark));
+            border-radius: 16px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .pin {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        /* Подвал */
+        .footer {
+            background: var(--text-main);
+            color: var(--white);
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Мобильное меню */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .burger span {
+            width: 26px;
+            height: 3px;
+            background: var(--text-main);
+            border-radius: 3px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid, .services-grid, .calc-box, .contacts-card, .branches-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 34px;
+            }
+            .nav, .btn-header {
+                display: none;
+            }
+            .nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 25px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow);
+            }
+            .burger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="4" y="2" width="16" height="20" rx="3"/>
+                        <circle cx="12" cy="13" r="5"/>
+                        <path d="M8 6h.01M12 6h.01"/>
+                    </svg>
+                </div>
+                <span class="logo-text">köbık</span>
+            </a>
+
+            <nav class="nav" id="nav-menu">
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#price" class="nav-link">Прайс-лист</a>
+                <a href="#calculator" class="nav-link">Калькулятор</a>
+                <a href="#delivery" class="nav-link">Доставка</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#contacts" class="nav-link">Филиалы</a>
+            </nav>
+
+            <a href="https://wa.me/77087583711?text=Здравствуйте!%20Хочу%20оформить%20заказ%20на%20химчистку%20Köbik" target="_blank" class="btn btn-header">
+                Написать в WhatsApp
+            </a>
+
+            <button class="burger" id="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge">✨ Химчистка в Атырау</div>
+                <h1>Бережная чистка и восстановление вашей одежды</h1>
+                <p>Вернем вещам свежесть и первозданный вид. Заберём прямо от вашей двери и доставим обратно чистыми по всему Атырау!</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/77087583711?text=Здравствуйте!%20Хочу%20вызвать%20курьера%20Köbik" target="_blank" class="btn btn-primary">
+                        🚗 Вызвать курьера
+                    </a>
+                    <a href="#price" class="btn btn-outline">
+                        Посмотреть прайс
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>1 696+</strong>
+                        <span>Подписчиков в Instagram</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>2 филиала</strong>
+                        <span>Batysmura Lite-1 и скоро в ТРЦ Infinity Mall</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="brand-circle">
+                    <div class="brand-logo-box">
+                        <div class="washer-icon">
+                            <div class="washer-window"></div>
+                        </div>
+                        <span>köbık</span>
+                    </div>
+                    <div class="floating-card card-1">🧥 Куртки и пальто</div>
+                    <div class="floating-card card-2">👔 Костюмы и платья</div>
+                    <div class="floating-card card-3">🚗 Доставка на дом</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги (ровно 2 карточки без обуви, аксессуаров и домашнего текстиля) -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши услуги</h2>
+                <p>Специализируемся исключительно на бережной чистке и восстановлении одежды</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧥</div>
+                    <h3>Верхняя одежда</h3>
+                    <p>Глубокая чистка пуховиков, курток, кашемировых пальто, плащей, тренчей и ветровок без потери объема, цвета и формы.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🫧</div>
+                    <h3>Повседневный гардероб</h3>
+                    <p>Деликатный уход за деловыми костюмами, рубашками, вечерними платьями, джемперами, кардиганами, юбками и брюками.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Полный Прайс-лист -->
+    <section id="price" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Прайс-лист на услуги</h2>
+                <p>Прозрачные и доступные цены на профессиональную химчистку одежды в Атырау</p>
+            </div>
+
+            <div class="price-tabs">
+                <button class="tab-btn active" onclick="openTab('outerwear', this)">🧥 Верхняя одежда</button>
+                <button class="tab-btn" onclick="openTab('suits', this)">👔 Костюмы и платья</button>
+                <button class="tab-btn" onclick="openTab('casual', this)">👕 Повседневная одежда</button>
+            </div>
+
+            <div class="price-container">
+                <!-- Верхняя одежда -->
+                <div id="tab-outerwear" class="price-category active">
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Пуховик / Зимняя куртка (короткая / средняя)</strong>
+                            <span>Глубокая чистка, сушка, взбивание наполнителя</span>
+                        </div>
+                        <div class="price-value">6 000 – 7 500 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Пуховик длинный</strong>
+                            <span>Чистка, выведение пятен, сохранение объема пуха</span>
+                        </div>
+                        <div class="price-value">8 000 – 10 000 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Пальто демисезонное / зимнее (драп, шерсть, кашемир)</strong>
+                            <span>Сухая чистка, пилинг (удаление катышков), отпаривание</span>
+                        </div>
+                        <div class="price-value">6 500 – 9 000 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Плащ / Тренч / Ветровка</strong>
+                            <span>Деликатная чистка с водоотталкивающей обработкой</span>
+                        </div>
+                        <div class="price-value">5 000 – 6 500 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Жилет утепленный (пуховый / синтепон)</strong>
+                            <span>Бережная чистка и восстановление формы</span>
+                        </div>
+                        <div class="price-value">4 000 – 5 000 ₸</div>
+                    </div>
+                </div>
+
+                <!-- Костюмы и платья -->
+                <div id="tab-suits" class="price-category">
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Деловой костюм (пиджак + брюки)</strong>
+                            <span>Комплексная сухая чистка и профессиональное ВТО (отпаривание)</span>
+                        </div>
+                        <div class="price-value">6 000 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Пиджак / Жакет</strong>
+                            <span>Чистка подклада, воротника и основной ткани</span>
+                        </div>
+                        <div class="price-value">3 800 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Брюки классические / Юбка</strong>
+                            <span>Удаление загрязнений и идеальные стрелки</span>
+                        </div>
+                        <div class="price-value">2 500 – 3 000 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Платье повседневное</strong>
+                            <span>Бережная чистка с сохранением яркости ткани</span>
+                        </div>
+                        <div class="price-value">4 000 – 5 500 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Платье вечернее / Коктейльное (сложный крой)</strong>
+                            <span>Деликатный уход за шелком, шифоном, декором</span>
+                        </div>
+                        <div class="price-value">6 500 – 10 000 ₸</div>
+                    </div>
+                </div>
+
+                <!-- Повседневная одежда -->
+                <div id="tab-casual" class="price-category">
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Рубашка / Сорочка / Блузка</strong>
+                            <span>Чистка воротничковой зоны, манжет и отглаживание</span>
+                        </div>
+                        <div class="price-value">2 000 – 2 500 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Свитер / Джемпер / Кардиган (шерсть, кашемир, трикотаж)</strong>
+                            <span>Мягкая чистка без усадки и деформации</span>
+                        </div>
+                        <div class="price-value">3 000 – 4 000 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Толстовка / Худи / Спортивный костюм</strong>
+                            <span>Выведение пятен и освежение ткани</span>
+                        </div>
+                        <div class="price-value">3 000 – 5 500 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Джинсы / Повседневные брюки</strong>
+                            <span>Чистка и отпаривание с сохранением цвета</span>
+                        </div>
+                        <div class="price-value">2 500 ₸</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">
+                            <strong>Шарф / Палантин / Шапка</strong>
+                            <span>Деликатное очищение и свежесть</span>
+                        </div>
+                        <div class="price-value">1 500 – 2 500 ₸</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Интерактивный калькулятор -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Онлайн-расчет и быстрый заказ</h2>
+                <p>Выберите одежду, которую нужно почистить, и отправьте готовую заявку нам в WhatsApp</p>
+            </div>
+
+            <div class="calc-box">
+                <div class="calc-items">
+                    <div class="calc-row">
+                        <div class="calc-info">
+                            <strong>Куртка / Пуховик</strong>
+                            <span>от 6 000 ₸ — чистка, сушка, взбивание пуха</span>
+                        </div>
+                        <div class="calc-controls">
+                            <button class="qty-btn" onclick="changeQty('jacket', -1)">−</button>
+                            <span id="qty-jacket">0</span>
+                            <button class="qty-btn" onclick="changeQty('jacket', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="calc-info">
+                            <strong>Пальто / Плащ / Тренч</strong>
+                            <span>от 6 500 ₸ — деликатная сухая чистка и отпаривание</span>
+                        </div>
+                        <div class="calc-controls">
+                            <button class="qty-btn" onclick="changeQty('coat', -1)">−</button>
+                            <span id="qty-coat">0</span>
+                            <button class="qty-btn" onclick="changeQty('coat', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="calc-info">
+                            <strong>Деловой костюм / Платье</strong>
+                            <span>от 5 000 ₸ — бережное удаление пятен и глажка</span>
+                        </div>
+                        <div class="calc-controls">
+                            <button class="qty-btn" onclick="changeQty('suit', -1)">−</button>
+                            <span id="qty-suit">0</span>
+                            <button class="qty-btn" onclick="changeQty('suit', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="calc-info">
+                            <strong>Рубашка / Свитер / Брюки</strong>
+                            <span>от 2 500 ₸ — повседневный гардероб</span>
+                        </div>
+                        <div class="calc-controls">
+                            <button class="qty-btn" onclick="changeQty('casual', -1)">−</button>
+                            <span id="qty-casual">0</span>
+                            <button class="qty-btn" onclick="changeQty('casual', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-summary">
+                    <div>
+                        <h3>Ваш список</h3>
+                        <p id="selected-list">Пока ничего не выбрано</p>
+                    </div>
+                    <div>
+                        <div class="total-price-box">
+                            <span>Ориентировочно:</span>
+                            <strong id="total-sum">0 ₸</strong>
+                        </div>
+                        <div class="delivery-check">
+                            <input type="checkbox" id="need-delivery" checked>
+                            <label for="need-delivery">Нужен забор и доставка по Атырау 🚗</label>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="sendOrderToWhatsApp()">
+                            Оформить заказ в WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как работает доставка -->
+    <section id="delivery" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Заберём и доставим по городу</h2>
+                <p>Не тратьте время на поездки — мы всё сделаем за вас</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-num">01</span>
+                    <h3>Заявка</h3>
+                    <p>Напишите нам в WhatsApp или Instagram. Согласуем удобное время для приезда курьера.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">02</span>
+                    <h3>Забор вещей</h3>
+                    <p>Курьер приедет к вам домой или в офис в любую точку Атырау и аккуратно упакует одежду.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">03</span>
+                    <h3>Чистка и уход</h3>
+                    <p>Технолог осмотрит каждую вещь, подберет безопасный метод чистки и выведет пятна.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">04</span>
+                    <h3>Доставка обратно</h3>
+                    <p>Привезем ваши чистые, свежие и отпаренные вещи на вешалках в защитных чехлах.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы из 2ГИС и Инстаграм -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>За что нас любят в Атырау</h2>
+                <p>Реальные впечатления наших клиентов из 2ГИС и Instagram</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>«Мне очень понравился сервис! Очень классная химчистка. Тут вам всегда рады, а самое главное — цены не завышены. Пуховик стал как новый!»</p>
+                    <span class="author">— Отзыв клиента из 2ГИС</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>«Очень удобная доставка по городу. Забрали два светлых пальто и деловой костюм прямо из дома в Нурсае, привезли чистыми и свежими. Рекомендую!»</p>
+                    <span class="author">— Алия М.</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>«Отличный сервис и приятные цены! Спасли любимую куртку от сложных пятен, которые не брала обычная стирка. Теперь только в Köbik.»</p>
+                    <span class="author">— Бекет С.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Филиалы и Контакты -->
+    <section id="contacts" class="section bg-light">
+        <div class="container">
+            <div class="contacts-card">
+                <div class="contacts-info">
+                    <h2>Наши филиалы и контакты</h2>
+                    <p>Приносите вещи в удобный филиал или закажите доставку по всему Атырау!</p>
+
+                    <div class="branches-grid">
+                        <div class="branch-box">
+                            <span class="branch-badge badge-open">Работает</span>
+                            <h4>📍 ЖК Batysmura Lite-1</h4>
+                            <p>г. Атырау, мкр. Нурсая, Batysmura Lite-1 (060000)</p>
+                        </div>
+                        <div class="branch-box soon">
+                            <span class="branch-badge badge-soon">Скоро открытие!</span>
+                            <h4>🛍️ ТРЦ Infinity Mall</h4>
+                            <p>г. Атырау — новый удобный пункт приёма и выдачи заказов</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <strong>📞 Телефон / WhatsApp:</strong>
+                            <a href="tel:+77087583711">+7 (708) 758-37-11</a>
+                        </li>
+                        <li>
+                            <strong>📸 Instagram & Threads:</strong>
+                            <a href="https://instagram.com/kobik.clean" target="_blank">@kobik.clean</a>
+                        </li>
+                        <li>
+                            <strong>💳 Оплата:</strong>
+                            <span>Наличный расчёт, перевод с карты, Kaspi QR</span>
+                        </li>
+                    </ul>
+
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/77087583711" target="_blank" class="btn btn-primary">Написать в WhatsApp</a>
+                        <a href="https://instagram.com/kobik.clean" target="_blank" class="btn btn-outline">Перейти в Instagram</a>
+                    </div>
+                </div>
+
+                <div class="contacts-map">
+                    <div class="map-placeholder">
+                        <div class="pin">📍</div>
+                        <h3>Köbik | Химчистка</h3>
+                        <p>1. мкр. Нурсая, Batysmura Lite-1<br>2. ТРЦ Infinity Mall (Скоро открытие)</p>
+                        <a href="https://2gis.kz/atyrau/firm/70000001114980538" target="_blank" class="btn btn-white">Открыть в 2ГИС</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <strong>köbık</strong> — Химчистка и восстановление одежды в Атырау
+            </div>
+            <div class="footer-copy">
+                © 2026 Köbik Clean. Batysmura Lite-1 & ТРЦ Infinity Mall.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const burgerBtn = document.getElementById('burger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        burgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Переключение вкладок прайс-листа
+        function openTab(tabName, btnElement) {
+            document.querySelectorAll('.price-category').forEach(cat => {
+                cat.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById('tab-' + tabName).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
+        // Логика калькулятора одежды с подсчетом цены
+        const items = {
+            jacket: { name: 'Куртка / Пуховик', count: 0, price: 6000 },
+            coat:   { name: 'Пальто / Плащ', count: 0, price: 6500 },
+            suit:   { name: 'Костюм / Платье', count: 0, price: 5000 },
+            casual: { name: 'Рубашка / Свитер / Брюки', count: 0, price: 2500 }
+        };
+
+        function changeQty(key, delta) {
+            items[key].count = Math.max(0, items[key].count + delta);
+            document.getElementById(`qty-${key}`).textContent = items[key].count;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const selectedList = document.getElementById('selected-list');
+            const totalSumEl = document.getElementById('total-sum');
+            const chosen = Object.values(items).filter(item => item.count > 0);
+
+            if (chosen.length === 0) {
+                selectedList.textContent = 'Пока ничего не выбрано';
+                totalSumEl.textContent = '0 ₸';
+                return;
+            }
+
+            let total = 0;
+            selectedList.innerHTML = chosen
+                .map(item => {
+                    const sum = item.count * item.price;
+                    total += sum;
+                    return `• ${item.name}: <strong>${item.count} шт.</strong> (~${sum.toLocaleString('ru-RU')} ₸)`;
+                })
+                .join('<br>');
+
+            totalSumEl.textContent = `~ ${total.toLocaleString('ru-RU')} ₸`;
+        }
+
+        function sendOrderToWhatsApp() {
+            const chosen = Object.values(items).filter(item => item.count > 0);
+            const needDelivery = document.getElementById('need-delivery').checked;
+
+            let text = 'Здравствуйте, Köbik! 👋 Хочу оформить заказ на химчистку:\n\n';
+            let total = 0;
+
+            if (chosen.length > 0) {
+                chosen.forEach(item => {
+                    const sum = item.count * item.price;
+                    total += sum;
+                    text += `▫️ ${item.name} — ${item.count} шт. (~${sum.toLocaleString('ru-RU')} ₸)\n`;
+                });
+                text += `\n💰 Ориентировочная сумма: ~${total.toLocaleString('ru-RU')} ₸\n`;
+            } else {
+                text += '▫️ Хочу проконсультироваться по чистке одежды\n';
+            }
+
+            text += needDelivery 
+                ? '\n🚗 Мне нужен забор и доставка по городу.' 
+                : '\n📍 Привезу вещи самостоятельно в филиал.';
+
+            const url = `https://wa.me/77087583711?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
